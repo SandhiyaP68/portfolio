@@ -497,7 +497,8 @@
 }
 
 
-#msg {
+/* ---------- Contact Form Message Styles ---------- */
+#msg { 
     display: block;
     text-align: center;
     font-size: 1.6rem;
@@ -505,34 +506,31 @@
     margin-top: 1.5rem;
     padding: 1rem 2rem;
     border-radius: 1rem;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(10px);
+    transition: all 0.3s ease;
+    opacity: 0; /* hidden by default */
 }
 
-/* Visible states */
-#msg.sending,
-#msg.success,
-#msg.error {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Sending */
+/* Sending state */
 #msg.sending {
-    background: #ffc107;
     color: var(--second-bg-color);
+    background: #ffc107; /* yellow for sending */
+    box-shadow: 0 0 1rem #ffc107;
+    opacity: 1;
 }
 
-/* Success */
+/* Success state */
 #msg.success {
-    background: var(--main-color);
     color: var(--second-bg-color);
+    background: var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    opacity: 1;
 }
 
-/* Error */
+/* Error state */
 #msg.error {
-    background: #ff4d4d;
     color: var(--second-bg-color);
+    background: #ff4d4d; /* red for error */
+    box-shadow: 0 0 1rem #ff4d4d;
+    opacity: 1;
 }
 

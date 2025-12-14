@@ -48,7 +48,7 @@
             </div>
             <div class="about-content">
                 <h2 class="heading">About<span> Me</span></h2>
-                <h3>Full Stack Developer</h3>
+                <h3>Frontend Developer</h3>
     <p>Frontend developer with experience building single-page web application and a knack for creating attractive user interfaces
                     using javascript,HTML,CSS,PHP. </p>
                 <h3>Technical Skills</h3>
@@ -181,13 +181,11 @@ form.addEventListener('submit', e => {
 
     msg.innerHTML = "Sending...";
     msg.className = "sending"; // instantly apply sending style
-    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
     setTimeout(() => msg.className = "", 2000);
     submitBtn.disabled = true;
 
     setTimeout(() => {
-        fetch(scriptURL, { method: 'POST', mode: 'no-cors',  body: new FormData(form) })
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
             .then(response => {
                 msg.innerHTML = "Your message has been sent.";
                 msg.className = "success"; // success style
@@ -196,7 +194,7 @@ form.addEventListener('submit', e => {
                 submitBtn.disabled = false;
             })
             .catch(error => {
-                msg.innerHTML = "Something went wrong! Try again";
+                msg.innerHTML = "Something went wrong!";
                 msg.className = "error"; // error style
                 setTimeout(() => msg.className = "", 2000); // hide after 1s
 
